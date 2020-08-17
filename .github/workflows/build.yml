@@ -1,21 +1,23 @@
 name: Build PDFs
 
-on: push
-    # tags:
-    # - '*'
+on: 
+  push:
+    tags:
+    - '*'
 
 jobs:
   build:
+    name: Build PDFs
     runs-on: ubuntu-latest
-    name: Upload PDF to release
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
     
-    - name: Install xelatex
+    - name: Install XeLaTeX
       run: sudo apt-get install texlive-xetex
     
-    - name: Build Deedy format
+    - name: Build deedy format resume
       working-directory: ./deedyFormat
       run: xelatex main.tex
     
@@ -30,7 +32,7 @@ jobs:
         draft: true
         prerelease: false
 
-    - name: Upload assets to release
+    - name: Attach deedy resume to release
       id: upload_deedy_asset
       uses: actions/upload-release-asset@v1
       env:
@@ -38,5 +40,5 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./deedyFormat/main.pdf
-        asset_name: Hiren Chalodiya - Resume.pdf
+        asset_name: "Hiren Chalodiya - Resume.pdf"
         asset_content_type: application/pdf

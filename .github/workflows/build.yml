@@ -7,7 +7,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Upload Deedy Format
+    name: Upload PDF to release
     steps:
     - name: Checkout code
       uses: actions/checkout@v2

@@ -1,0 +1,70 @@
+- name: AgroSearch
+  description: B.Tech Project
+  duration: Jan 2019 - April 2019
+  mentor: Dr. Sumit Kalra
+  place: Jodhpur, India
+  link: https://github.com/hirenchalodiya1/agrosearch
+  info:
+    [
+      Developed domain based Search engine on Solr
+      Built a separate web crawler in Python using scrappy framework
+      Indexed 1M sites using Nutch and customized crawler(written in python) for optimization purpose
+      Designed an architecture to synchronize query response of different Solr core instances
+      Technologies: Solr, Nutch, Django, Scrappy
+    ]
+
+- name: AgriSync
+  description: Course Project
+  duration: Jan 2019 - April 2019
+  mentor: Dr. Sumit Kalra
+  place: Jodhpur, India
+  link: https://github.com/hirenchalodiya1/agrisync # deprecated
+  info:
+    [
+      Designed an architecture for multiple types of users
+      Implemented the backend, designed the database and UI/UX of the platform and wrote various unit tests with 99.9% test coverage
+      Collaborated with three other programmers.
+      Technologies: Django, Coverage, Coveralls, Travis
+    ]
+
+- name: Bo - The Bot
+  description: Microsoft code.fun.do++
+  duration: Jan 2018 - April 2018
+  place: Jodhpur, India
+  info:
+    [
+      Developed a messenger bot to act as a helpline during natural disasters
+      Collaborated with two other programmers
+      Technologies: Flask, Messenger Bot Framework
+    ]
+
+- name: Ignus
+  description: MVC driven platform for annual college festival
+  duration: Oct 2018 - Feb 2019
+  place: Jodhpur, India
+  link: https://ignus.org # deprecated
+  info:
+    [
+      Designed UI/UX of the platform used by 2000+ users
+      Collaborated with 3 other programmers
+      Technologies: Django, HTML/CSS, Bootstrap, JavaScript
+    ]
+
+- name: Gymkhana Portal
+  description: Web Portal and Forum
+  link: https://github.com/devlup-labs/gymkhana_portal
+  info:
+    [
+      Wrote various unit test cases in python with coverage 95%
+      Added ability to customize HTML through admin panel
+      Designed UI/UX of the platform used by 1000+ users
+      Technologies: Django, HTML/CSS, MD Bootstrap, JavaScript
+    ]
+
+# others -> wirte yml objects
+# compiler algorithm 2019
+# os research 2019
+# medi block -> block chain based system to store medical records 2019
+
+# deep packet inspection in android 2020
+# bibliography research paper 2020

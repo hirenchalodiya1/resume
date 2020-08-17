@@ -1,0 +1,12 @@
+- name: Azure Migrate for SMB
+  description: Microsoft Summer Intern
+  duration: May 2020 - July 2020
+  company: Microsoft
+  team: Azure Compute/Azure Migrate
+  manager: Andy Slivinschi
+  mentor: Logan Smith, Damon Stephenson
+  info:
+    Developed a prototype for cloud migration tool for SMBs
+    Designed few clicks solution for client to migrate their service to Azure within 24 hours
+    Critically analysed different approaches and implemented lift and shift migration approach
+    Used agent based approach to assess clients on premises machine

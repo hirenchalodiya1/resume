@@ -1,0 +1,25 @@
+- name: IIT Jodhpur
+  info:
+    B. Tech
+    Computer Science and Engineering
+    Expected 2021
+    Jodhpur, Rajasthan
+  result: 9.51/10 (Till 6th semester)
+  additional:
+    dept_rank: 2
+
+- name: Aashadeep Science Bhavan
+  info:
+    Higher Secondary Certificate
+    Gujarat Higher Secondary Education Board
+    2017
+    Surat, Gujarat
+  result: 95%
+
+- name: Sadhana Niketan Vidhyalay
+  info:
+    Secondary School Certificate
+    Gujarat Secondary Education Board
+    2015
+    Surat, Gujarat
+  result: 94.83%

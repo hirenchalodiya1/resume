@@ -1,0 +1,42 @@
+name: Build PDFs
+
+on: push
+    # tags:
+    # - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Upload Deedy Format
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Install xelatex
+      run: sudo apt-get install texlive-xetex
+    
+    - name: Build Deedy format
+      working-directory: ./deedyFormat
+      run: xelatex main.tex
+    
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: true
+        prerelease: false
+
+    - name: Upload assets to release
+      id: upload_deedy_asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./deedyFormat/main.pdf
+        asset_name: Hiren Chalodiya - Resume.pdf
+        asset_content_type: application/pdf

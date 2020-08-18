@@ -38,22 +38,20 @@ jobs:
 
     - name: Attach deedy resume to release
       uses: actions/upload-release-asset@v1
-      working-directory: ./deedyFormat
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./main.pdf
+        asset_path: ./deedyFormat/main.pdf
         asset_name: HirenChalodiya-ResumeF1.pdf
         asset_content_type: application/pdf
     
     - name: Attach single column format resume to release
       uses: actions/upload-release-asset@v1
-      working-directory: ./singleColumn
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./main.pdf
+        asset_path: ./singleColumn/main.pdf
         asset_name: HirenChalodiya-ResumeF2.pdf
         asset_content_type: application/pdf

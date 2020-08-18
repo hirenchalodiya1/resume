@@ -21,6 +21,10 @@ jobs:
       working-directory: ./deedyFormat
       run: xelatex main.tex
     
+    - name: Build one column format resume
+      working-directory: ./singleColumn
+      run: xelatex main.tex
+
     - name: Create release
       id: create_release
       uses: actions/create-release@v1
@@ -33,12 +37,23 @@ jobs:
         prerelease: false
 
     - name: Attach deedy resume to release
-      id: upload_deedy_asset
       uses: actions/upload-release-asset@v1
+      working-directory: ./deedyFormat
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./deedyFormat/main.pdf
-        asset_name: HirenChalodiya-Resume.pdf
+        asset_path: ./main.pdf
+        asset_name: HirenChalodiya-ResumeF1.pdf
+        asset_content_type: application/pdf
+    
+    - name: Attach single column format resume to release
+      uses: actions/upload-release-asset@v1
+      working-directory: ./singleColumn
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./main.pdf
+        asset_name: HirenChalodiya-ResumeF2.pdf
         asset_content_type: application/pdf

@@ -2,7 +2,7 @@
   programming_languages: [C, C++, Python, JavaScript, Java, TypeScript]
   languages: [English, Gujarati, Hindi]
   web_tech: [HTML, CSS]
-  framework: [Django, Flask, Solr, Bootstrap, Nutch, Scrappy]
+  framework: [Django, Flask, Solr, Bootstrap, Nutch, Scrapy]
   libs: [React, Electron]
   utilities: [Git, Jetbrains IDE, Visual Studio]
   os: [Ubuntu, Windows]
@@ -13,7 +13,7 @@
     full_link: https://github.com/hirenchalodiya1/
   linkdin:
     handle: hiren-chalodiya-277b95157
-    full_link: https://www.linkedin.com/in/hiren-chalodiya-277b95157/
+    full_link: https://www.linkedin.com/in/hiren-chalodiya/
   
 - title: Achivements
   1: 2018 - Branch(CSE) topper of year 2017-18 at IIT Jodhpur

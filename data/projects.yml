@@ -61,6 +61,10 @@
       Technologies: Django, HTML/CSS, MD Bootstrap, JavaScript
     ]
 
+- name: Author Name Disambiguation
+  description: Research Project
+
+- name: Deep packet Inspection
 # others -> wirte yml objects
 # compiler algorithm 2019
 # os research 2019

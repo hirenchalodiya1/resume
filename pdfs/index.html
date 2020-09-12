@@ -10,9 +10,13 @@
 
 <script>
     var element = document.getElementById("main-page");
-    fetch("info,json").then(res => {
-        element.innerHTML = res
-    })
+    fetch("info,json")
+        .then(res => {
+            return res.json()
+        })
+        .then(data => {
+            element.innerHTML = data
+        })
 </script>
 
 </html>

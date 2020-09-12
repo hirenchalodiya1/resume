@@ -1,0 +1,16 @@
+{
+    "deedy": {
+        "working_directory": "deedyFormat",
+        "input_file":"main.tex",
+        "asset_path": "main.pdf",
+        "asset_name": "HirenChalodiya-ResumeF1.pdf",
+        "asset_content_type": "application/pdf"
+    },
+    "singleColumn": {
+        "working_directory": "singleColumn",
+        "input_file":"main.tex",
+        "asset_path": "main.pdf",
+        "asset_name": "HirenChalodiya-ResumeF2.pdf",
+        "asset_content_type": "application/pdf"
+    }
+}

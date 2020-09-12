@@ -3,3 +3,4 @@
 *.out
 *.aux
 *.swp
+__pycache__

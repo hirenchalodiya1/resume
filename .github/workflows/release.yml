@@ -1,6 +1,9 @@
 name: Release
 
-on: push
+on:
+  push:
+    tags:
+      - *
 
 jobs:
   build:
@@ -17,7 +20,7 @@ jobs:
     - name: Build PDFs
       run: python3 build.py release
 
-    - name: Create release and Upload PDFS
+    - name: Create release and Upload PDFs
       id: create_release
       uses: svenstaro/upload-release-action@v2
       with:
@@ -27,13 +30,3 @@ jobs:
         file: "./pdf/*"
         prerelease: false
         file_glob: true
-
-    - name: Attach deedy resume to release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./pdf
-        asset_name: HirenChalodiya-ResumeF1.pdf
-        asset_content_type: application/pdf

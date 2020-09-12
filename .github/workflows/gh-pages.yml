@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    name: Build & Upload PDFs to GitHub pages
+    name: Deploy PDFs to GitHub pages
     runs-on: ubuntu-latest
     
     steps:
@@ -15,10 +15,7 @@ jobs:
       run: sudo apt-get install texlive-xetex
     
     - name: Build PDFs
-      run: |
-        from build import main
-        main()
-      shell: python
+      run: python3 build.py
     
     - name: Deploy Github Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3

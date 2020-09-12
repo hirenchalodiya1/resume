@@ -2,21 +2,13 @@
 
 <head>
     <title>Hiren Chalodiya | Resumes</title>
+    <link rel="icon" href="https://avatars.githubusercontent.com/hirenchalodiya1" sizes="16x16">
 </head>
 
 <body>
     <div id="main-page"></div>
 </body>
-
-<script>
-    var element = document.getElementById("main-page");
-    fetch("info,json")
-        .then(res => {
-            return res.json()
-        })
-        .then(data => {
-            element.innerHTML = data
-        })
-</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="index.js"></script>
 
 </html>

@@ -1,9 +1,18 @@
 <html>
-    <head>
-        <title>Hiren Chalodiya | Resumes</title>
-    </head>
 
-    <body>
-        Hi, this is test page
-    </body>
+<head>
+    <title>Hiren Chalodiya | Resumes</title>
+</head>
+
+<body>
+    <div id="main-page"></div>
+</body>
+
+<script>
+    var element = document.getElementById("main-page");
+    fetch("info,json").then(res => {
+        element.innerHTML = res
+    })
+</script>
+
 </html>

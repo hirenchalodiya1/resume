@@ -22,7 +22,7 @@ jobs:
 
     - name: Create release and Upload PDFs
       id: create_release
-      uses: svenstaro/upload-release-action@v2
+      uses: svenstaro/upload-release-action@2.1.0
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref }}

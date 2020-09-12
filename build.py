@@ -1,7 +1,9 @@
 import json
 import os
+import sys
 
-def main():
+
+def main(runner="build"):
     with open("pdfs/info.json") as f:
         pdfs  = json.load(f)
         
@@ -15,12 +17,20 @@ def main():
             command = f'xelatex {value["input_file"]}'
             os.system(command)
 
-            # copy pdf
-            command = f'cp {value["asset_path"]} ../pdfs/{value["asset_name"]}'
+            # create folder
+            folder = "pdf" if runner == "release" else "pdfs"
+            if folder != "pdfs":
+                os.system(f'mkdir -p ../{folder}')
+
+            # copy pdf            
+            command = f'cp -p {value["asset_path"]} ../{folder}/{value["asset_name"]}'
             os.system(command)
 
             # change to parent directory
             os.chdir("..")
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "release":
+        main("release")
+    else:
+        main()

@@ -1,13 +1,10 @@
 name: Release
 
-on: 
-  push:
-    tags:
-    - '*'
+on: push
 
 jobs:
   build:
-    name: Build & Release PDFs
+    name: Release PDFs
     runs-on: ubuntu-latest
     
     steps:
@@ -17,24 +14,19 @@ jobs:
     - name: Install XeLaTeX
       run: sudo apt-get install texlive-xetex
     
-    - name: Build deedy format resume
-      working-directory: ./deedyFormat
-      run: xelatex main.tex
-    
-    - name: Build one column format resume
-      working-directory: ./singleColumn
-      run: xelatex main.tex
+    - name: Build PDFs
+      run: python3 build.py release
 
-    - name: Create release
+    - name: Create release and Upload PDFS
       id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: svenstaro/upload-release-action@v2
       with:
-        tag_name: ${{ github.ref }}
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
-        draft: false
+        file: "./pdf/*"
         prerelease: false
+        file_glob: true
 
     - name: Attach deedy resume to release
       uses: actions/upload-release-asset@v1
@@ -42,16 +34,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./deedyFormat/main.pdf
+        asset_path: ./pdf
         asset_name: HirenChalodiya-ResumeF1.pdf
-        asset_content_type: application/pdf
-    
-    - name: Attach single column format resume to release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./singleColumn/main.pdf
-        asset_name: HirenChalodiya-ResumeF2.pdf
         asset_content_type: application/pdf
